@@ -42,7 +42,12 @@ public class BuildingApp {
                 String y =scanner.nextLine();
                 edificio.showApartament(x,y);
             } else if (option==4) {
-
+                System.out.println("INTRODUCE EL NUMERO DE LA PLANTA");
+                int x = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println("introduce el numero de la puerta");
+                String y =scanner.nextLine();
+                edificio.showOwner(x,y);
             } else if (option==5) {
                 System.out.println("saliendo..");
 
