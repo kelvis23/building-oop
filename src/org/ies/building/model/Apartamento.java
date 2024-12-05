@@ -16,6 +16,9 @@ public class Apartamento {
         this.door = door;
         this.propietarios = propietarios;
     }
+    public void infoApartamet(){
+        System.out.println("planta"+floor+"puerta"+door+"propietario");
+    }
 
     public int getFloor() {
         return floor;

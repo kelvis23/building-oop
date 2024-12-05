@@ -1,5 +1,7 @@
 package org.ies.building.model;
 
+import org.ies.building.componentes.EdificioReader;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -13,6 +15,40 @@ public class Edificio {
         this.municipiality = municipiality;
         this.apartamentos = apartamentos;
     }
+    public void infoBuilding(){
+        for (var apartamet:apartamentos) {
+
+            System.out.println("direcion: " + id + " municipio: " + municipiality +" apartamentos :"+apartamet);
+
+
+        }
+    }
+
+    public Apartamento showApartaments(){
+        int planta =1;
+        for (var apartament:apartamentos){
+            if (apartament.getFloor()==planta){
+                //apaño
+                System.out.println("direcion: " + id + " municipio: " + municipiality +" apartamentos :"+apartament);
+            }
+        }
+        return null;
+    }
+    //EROR
+    public void showApartament(int planta, String puerta){
+        for (var apartamento:apartamentos){
+            if (apartamento.getFloor()==planta){
+                apartamento.getDoor().equals(puerta);
+                System.out.println("direcion: " + id + " municipio: " + municipiality +" apartamentos :"+apartamento);
+            }else {
+                notExits();
+            }
+        }
+    }
+    public void  notExits(){
+
+    }
+    public void showOwner
 
     public String getId() {
         return id;
