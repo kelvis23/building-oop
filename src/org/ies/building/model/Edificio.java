@@ -48,7 +48,18 @@ public class Edificio {
     public void  notExits(){
 
     }
-    public void showOwner
+    public void showOwner(int planta,String puerta){
+        for (var apartmet:apartamentos){
+            if (apartmet.getFloor()==planta){
+                apartmet.getDoor().equals(puerta);
+                for (var propietario:apartmet.getPropietarios()){
+                    propietario.infoPropietario();
+                }
+            }
+
+        }
+
+    }
 
     public String getId() {
         return id;
