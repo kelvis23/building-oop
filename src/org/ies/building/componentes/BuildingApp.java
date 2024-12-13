@@ -33,7 +33,10 @@ public class BuildingApp {
             if (option==1){
                 edificio.infoBuilding();
             } else if (option==2) {
-                edificio.showApartaments();
+                System.out.println("introduce el numero de la planta");
+                int size =scanner.nextInt();
+                scanner.nextLine();
+                edificio.showApartaments(size);
             } else if (option==3) {
                 System.out.println("INTRODUCE EL NUMERO DE LA PLANTA");
                 int x = scanner.nextInt();

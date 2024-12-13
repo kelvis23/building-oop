@@ -21,10 +21,7 @@ public class ApartamentoReader {
         scanner.nextLine();
         System.out.println("puerta del apartamento");
         String door = scanner.nextLine();
-        System.out.println("cuantos propietarios tine el apartamento");
-        int size = scanner.nextInt();
-        scanner.nextLine();
-        Propietario[]propietarios = new Propietario[size];
+        Propietario[]propietarios = new Propietario[readNumOWerde()];
         for (int i = 0; i < propietarios.length; i++) {
             propietarios[i]=propietarioReader.read();
         }
@@ -33,5 +30,14 @@ public class ApartamentoReader {
                 door,
                 propietarios
         );
+    }
+    private int readNumOWerde(){
+        int size;
+        do {
+            System.out.println("cuantos propietarios tienene el apartamento");
+            size=scanner.nextInt();
+            scanner.nextLine();
+        }while (size <0);
+        return size;
     }
 }

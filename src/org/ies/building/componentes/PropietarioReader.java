@@ -18,11 +18,11 @@ public class PropietarioReader {
         System.out.println("introduce el  nombre del propietario");
         String name =scanner.nextLine();
         System.out.println("introduce el  apellido del propietario");
-        String lastname =scanner.nextLine();
+        String surname =scanner.nextLine();
         return new Propietario(
                 nif,
                 name,
-                lastname
+                surname
         );
     }
 }

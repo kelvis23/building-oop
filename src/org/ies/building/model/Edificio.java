@@ -15,6 +15,7 @@ public class Edificio {
         this.municipiality = municipiality;
         this.apartamentos = apartamentos;
     }
+
     public void infoBuilding(){
         for (var apartamet:apartamentos) {
 
@@ -24,37 +25,34 @@ public class Edificio {
         }
     }
 
-    public Apartamento showApartaments(){
-        int planta =1;
+    public void  showApartaments(int planta){
+
         for (var apartament:apartamentos){
             if (apartament.getFloor()==planta){
                 //apaño
                 System.out.println("direcion: " + id + " municipio: " + municipiality +" apartamentos :"+apartament);
+
+            }
+        }
+    }
+    //EROR
+    public Apartamento showApartament(int planta, String puerta){
+        for (var apartamento:apartamentos){
+            if (apartamento.getDoor().equals(puerta) && apartamento.getFloor()==planta){
+                    apartamento.infoApartamet();
+                    return  apartamento;
             }
         }
         return null;
     }
-    //EROR
-    public void showApartament(int planta, String puerta){
-        for (var apartamento:apartamentos){
-            if (apartamento.getFloor()==planta){
-                apartamento.getDoor().equals(puerta);
-                System.out.println("direcion: " + id + " municipio: " + municipiality +" apartamentos :"+apartamento);
-            }else {
-                notExits();
-            }
-        }
-    }
-    public void  notExits(){
 
-    }
     public void showOwner(int planta,String puerta){
         for (var apartmet:apartamentos){
-            if (apartmet.getFloor()==planta){
-                apartmet.getDoor().equals(puerta);
-                for (var propietario:apartmet.getPropietarios()){
-                    propietario.infoPropietario();
-                }
+            if (apartmet.getFloor()==planta && apartmet.getDoor().equals(puerta)){
+                   for (var propietario:apartmet.getPropietarios()){
+                       propietario.infoPropietario();
+                   }
+
             }
 
         }

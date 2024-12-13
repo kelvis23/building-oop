@@ -19,10 +19,7 @@ public class EdificioReader {
         String id = scanner.nextLine();
         System.out.println("introduce el municipio");
         String municipality = scanner.nextLine();
-        System.out.println("cuantos  apratmentos tirene el edificio");
-        int size = scanner.nextInt();
-        scanner.nextLine();
-        Apartamento[]apartamentos =new Apartamento[size];
+        Apartamento[]apartamentos =new Apartamento[readNumApartmet()];
         for (int i = 0; i < apartamentos.length; i++) {
             apartamentos[i]=apartamentoReader.read();
         }
@@ -33,4 +30,14 @@ public class EdificioReader {
 
         );
     }
+    public int readNumApartmet(){
+        int size ;
+        do {
+            System.out.println("cuantos  apratmentos tirene el edificio");
+            size = scanner.nextInt();
+            scanner.nextLine();
+        }while (size<0);
+        return size;
+    }
 }
+
